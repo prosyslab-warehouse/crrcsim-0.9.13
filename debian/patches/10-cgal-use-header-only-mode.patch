@@ -1,0 +1,13 @@
+Index: crrcsim-0.9.13/configure.ac
+===================================================================
+--- crrcsim-0.9.13.orig/configure.ac
++++ crrcsim-0.9.13/configure.ac
+@@ -232,7 +232,7 @@ if  (test "x$ac_cv_header_CGAL_Exact_pre
+       has_CGAL="yes  (found CGAL v3)"
+     fi   
+     CGAL_CFLAGS=-frounding-math
+-    CGAL_LIBS=-lCGAL
++    CGAL_LIBS=
+     AC_DEFINE([WINDDATA3D], [1], [Import code for wind data, needs CGAL, 0 to disable])
+ else
+     has_CGAL="no   (CGAL not found)"

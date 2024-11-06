@@ -1,0 +1,26 @@
+Author: Agustin Henze <tin@sluc.org.ar>
+Description: Fix sys/io.h missing at (mips, mipsel, s390, s390x, sparc and sh4)
+ architectures
+--- a/src/mod_inputdev/inputdev_parallel/inputdev_parallel.cpp
++++ b/src/mod_inputdev/inputdev_parallel/inputdev_parallel.cpp
+@@ -28,16 +28,13 @@
+ #if defined(__APPLE__) || defined(MACOSX)
+ #else
+ #  if defined(WIN32)
+-#  elif defined(__powerpc__)
+-#    define ioperm(a,b,c) -1
+-#    define inb(a) 0
+-#    define outb(a,b)
+ #  else   // Linux
+-#    ifdef HAVE_SYS_IO_H
++#    if HAVE_SYS_IO_H
+ #     include <sys/io.h>
+ #    else
+-#     include <unistd.h>
+-#     include <asm/io.h>
++#     define ioperm(a,b,c) -1
++#     define inb(a) 0
++#     define outb(a,b)
+ #    endif
+ #  endif
+ #endif  // __APPLE__

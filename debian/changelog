@@ -1,0 +1,102 @@
+crrcsim (0.9.13-3.2build1) focal; urgency=medium
+
+  * No-change rebuild for libgcc-s1 package name change.
+
+ -- Matthias Klose <doko@ubuntu.com>  Mon, 23 Mar 2020 07:12:00 +0100
+
+crrcsim (0.9.13-3.2) unstable; urgency=medium
+
+  * Non-maintainer upload.
+  * Add patch to fix FTBFS with CGAL >= 5.0 (Closes: #946114).
+  * Add Build-Depends: libcgal-dev (>= 5.0~).
+
+ -- Joachim Reichel <reichel@debian.org>  Tue, 03 Dec 2019 22:22:43 +0100
+
+crrcsim (0.9.13-3.1) unstable; urgency=medium
+
+  * Non-maintainer upload.
+  * Switch back to the libjpeg that will be in buster.
+    (Closes: #916346)
+
+ -- Adrian Bunk <bunk@debian.org>  Sat, 22 Dec 2018 01:02:57 +0200
+
+crrcsim (0.9.13-3) unstable; urgency=medium
+
+  * Fix sys/io unsupported, defining dummy interfaces for io operations
+
+ -- Agustin Henze <tin@debian.org>  Sat, 01 Dec 2018 16:49:34 +0100
+
+crrcsim (0.9.13-2) unstable; urgency=medium
+
+  [ Ondřej Nový ]
+  * d/watch: Use https protocol
+
+  [ Agustin Henze ]
+  * Use different approach for patching the missing sys_io.
+    Thanks to Emilio Pozuelo Monfort <pochu@debian.org> for proposing this approach
+    (Closes: #839161)
+
+ -- Agustin Henze <tin@debian.org>  Sat, 01 Dec 2018 12:13:24 +0100
+
+crrcsim (0.9.13-1) unstable; urgency=medium
+
+  [ Iñaki Malerba ]
+  * New upstream version 0.9.13
+  * Add watch file
+  * Fix libjpeg dependency
+  * Use debhelper instead of CDBS
+  * Update patches to match new upstream release
+  * Add boost_thread patch (boost_thread-mt is now boost_thread)
+  * Use debhelper 11
+  * Modify install files, path changed
+  * Remove lintian warnings
+  * Add simple (autopk)test
+
+  [ Agustin Henze ]
+  * Add patch for removing an extra std::cerr at the end of an output stream
+  * Update sys_io_missing patch, add support for hppa architecture (Closes:
+    #839161). Thanks to "Helge Deller" <deller@gmx.de>
+
+ -- Agustin Henze <tin@debian.org>  Fri, 17 Aug 2018 15:18:10 +0200
+
+crrcsim (0.9.12-6) unstable; urgency=medium
+
+  * Bump Standards-Version to 3.9.5 (no changes required)
+  * Add Vcs fields
+  * Use my debian email account
+  * Add longtitle and icon entry in debian/menu (Closes: #737852) Thanks to
+    Markus Koschany
+
+ -- Agustin Henze <tin@debian.org>  Thu, 04 Sep 2014 08:36:45 -0300
+
+crrcsim (0.9.12-5) unstable; urgency=low
+
+  * Fix FTBFS. Adds libgmp at linking stage (Closes: #692454).
+
+ -- Agustin Henze <tin@sluc.org.ar>  Tue, 06 Nov 2012 10:43:09 -0300
+
+crrcsim (0.9.12-4) unstable; urgency=low
+
+  * Added support for interface control via the audio input (Closes: #690881).
+
+ -- Agustin Henze <tin@sluc.org.ar>  Fri, 19 Oct 2012 10:31:34 -0300
+
+crrcsim (0.9.12-3) unstable; urgency=low
+
+  * Fix FTBFS on sh4: This platform does not provide <sys/io.h>, so the input
+    parallel port driver is disabled (Closes: #690194).
+
+ -- Agustin Henze <tin@sluc.org.ar>  Thu, 11 Oct 2012 11:52:18 -0300
+
+crrcsim (0.9.12-2) unstable; urgency=low
+
+  * Fix FTBFS on mips, mipsel, s390, s390x and sparc: Those platforms are not
+    provide <sys/io.h>, so the input parallel port driver is disabled.
+
+ -- Agustin Henze <tin@sluc.org.ar>  Fri, 05 Oct 2012 16:03:26 -0300
+
+crrcsim (0.9.12-1) unstable; urgency=low
+
+  * Initial release (Closes: #518217).
+
+ -- Agustin Henze <tin@sluc.org.ar>  Thu, 13 Aug 2012 12:43:20 -0300

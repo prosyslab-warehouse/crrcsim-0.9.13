@@ -1,0 +1,13 @@
+Author: Agustin Henze <tin@sluc.org.ar>
+Description: Remove extra std:cerr 
+--- a/src/mod_video/crrc_animation.cpp
++++ b/src/mod_video/crrc_animation.cpp
+@@ -84,7 +84,7 @@
+       else
+       {
+         std::cerr << "createAnimation: unknown animation type \'"
+-                  << type << "\'" << std::cerr;
++                  << type << "\'";
+       }
+       
+       if (anim != NULL)

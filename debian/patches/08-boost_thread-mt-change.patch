@@ -1,0 +1,49 @@
+Author: Iñaki Malerba <inaki@malerba.space>
+Description: boost_thread-mt is now boost_thread
+Index: crrcsim/configure.ac
+===================================================================
+--- crrcsim.orig/configure.ac
++++ crrcsim/configure.ac
+@@ -226,7 +226,7 @@ if  (test "x$ac_cv_header_CGAL_Exact_pre
+       AC_DEFINE([CGAL_VERSION3], [0], [CGAL_VERSION3 compatibility]) 
+       has_CGAL="yes  (found CGAL > v3)"
+       AC_CHECK_LIB(gmp,__gmpq_init,,AC_MSG_ERROR([gmp library not found. Please install it.]))
+-      AC_CHECK_LIB(boost_thread-mt,main,,AC_MSG_ERROR([boost_thread-mt library not found. Please install it.]))
++      AC_CHECK_LIB(boost_thread,main,,AC_MSG_ERROR([boost_thread library not found. Please install it.]))
+     else
+       AC_DEFINE([CGAL_VERSION3], [1], [CGAL_VERSION3 compatibility])
+       has_CGAL="yes  (found CGAL v3)"
+Index: crrcsim/configure
+===================================================================
+--- crrcsim.orig/configure
++++ crrcsim/configure
+@@ -6515,13 +6515,13 @@ else
+   as_fn_error $? "gmp library not found. Please install it." "$LINENO" 5
+ fi
+ 
+-      { $as_echo "$as_me:${as_lineno-$LINENO}: checking for main in -lboost_thread-mt" >&5
+-$as_echo_n "checking for main in -lboost_thread-mt... " >&6; }
++      { $as_echo "$as_me:${as_lineno-$LINENO}: checking for main in -lboost_thread" >&5
++$as_echo_n "checking for main in -lboost_thread... " >&6; }
+ if ${ac_cv_lib_boost_thread_mt_main+:} false; then :
+   $as_echo_n "(cached) " >&6
+ else
+   ac_check_lib_save_LIBS=$LIBS
+-LIBS="-lboost_thread-mt  $LIBS"
++LIBS="-lboost_thread  $LIBS"
+ cat confdefs.h - <<_ACEOF >conftest.$ac_ext
+ /* end confdefs.h.  */
+ 
+@@ -6550,10 +6550,10 @@ if test "x$ac_cv_lib_boost_thread_mt_mai
+ #define HAVE_LIBBOOST_THREAD_MT 1
+ _ACEOF
+ 
+-  LIBS="-lboost_thread-mt $LIBS"
++  LIBS="-lboost_thread $LIBS"
+ 
+ else
+-  as_fn_error $? "boost_thread-mt library not found. Please install it." "$LINENO" 5
++  as_fn_error $? "boost_thread library not found. Please install it." "$LINENO" 5
+ fi
+ 
+     else
